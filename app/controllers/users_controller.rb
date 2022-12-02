@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     if @user.save
       render json: {
         user: {
-          username: @user.username
+          username: @user.username,
+          email: @user.email
         }
       }
     else
@@ -17,6 +18,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :username)
+    params.require(:user).permit(:username, :email, :password)
   end
 end

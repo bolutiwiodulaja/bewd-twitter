@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bubbles
   root 'homepage#index'
   get '/feeds' => 'feeds#index'
 
